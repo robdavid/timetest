@@ -14,10 +14,10 @@ func main() {
 			fmt.Fprintf(os.Stderr, "%s: %s", os.Args[0], err)
 		} else {
 			start := time.Now()
-			fmt.Printf("Start at %s...\n", start)
+			fmt.Printf("Start at %s...\n", start.Format(time.StampMilli))
 			time.Sleep(time.Duration(tm) * time.Second)
 			end := time.Now()
-			fmt.Printf("End   at %s, elapsed %s\n", end, end.Sub(start))
+			fmt.Printf("End   at %s, elapsed %s\n", end.Format(time.StampMilli), end.Sub(start))
 		}
 	}
 }
